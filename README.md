@@ -39,7 +39,7 @@ To initialise the view
 yourinitbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                OfflineAadhaarHelper.with(Activity.this, "Your Company Name to be displayed while the process ", "Your Authkey").start();
+                OfflineAadhaarHelper.with(Activity.this, "Your Company Name to be displayed to the user while doing the process ", "Your Authkey").start();
             }
         });
 ```
