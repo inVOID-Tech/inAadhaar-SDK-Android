@@ -30,7 +30,7 @@ android {
 }
 ```
 ## Main Activity Code
-To initialise the view : 
+To initialise the view
 ```
 yourinitbutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,13 +39,13 @@ yourinitbutton.setOnClickListener(new View.OnClickListener() {
             }
         });
 ```
-## Authorization : 
+## Authorization 
 To Obtain your organisation's authkey, contact us at hello@invoid.co
 
-## Customization : 
+## Customization 
 Coming soon
 
-## Response returned from the SDK : 
+## Response returned from the SDK
 - .zip file path
 - sharecode
 - processedJSON
