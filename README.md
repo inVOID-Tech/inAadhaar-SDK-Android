@@ -8,7 +8,7 @@ Aadhaar Offline is the only valid method to submit your Aadhaar identity to any 
 
 ## Steps in the SDK
 1. User is guided to the UIDAI website to download the paperless e-KYC (Aadhaar .xml)
-2. Iputs for "Aadhaar Number" & Captcha are filled by the end user.
+2. Inputs for "Aadhaar Number" & Captcha are filled by the end user.
 3. On continuing
     - [x] User is prompted to enter a temporary pin (share code) in order to encrypt the to be downloaded xml using a password.
     - [x] An OTP is received by the end user which is then auto read by the SDK. The inVOID SDK only reads the then received OTP message through the screen.
