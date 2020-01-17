@@ -54,3 +54,23 @@ Coming soon
 - sharecode
 - processedJSON
 
+```
+@Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        if(requestCode == OfflineAadhaarHelper.AADHAAR_DATA_REQ_CODE) {
+            if(resultCode == RESULT_OK) {
+                if (data != null) {
+                    AadhaarData aadhaarData = data.getParcelableExtra(OfflineAadhaarHelper.AADHAAR_DATA);
+                    Log.d(TAG, "onActivityResult: json: "+aadhaarData.getJsonString());
+                    Log.d(TAG, "onActivityResult: shareCode: "+aadhaarData.getShareCode());
+                    Log.d(TAG, "onActivityResult: file uri: "+aadhaarData.getFileUri().toString());
+                }
+            } else if(resultCode == RESULT_CANCELED){
+                Log.d(TAG, "onActivityResult: cancelled by user");
+            }
+        } else {
+            super.onActivityResult(requestCode, resultCode, data);
+        }
+    }
+```
+
