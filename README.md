@@ -28,6 +28,10 @@ android {
        targetCompatibility = 1.8
     }
 }
+dependencies {
+    ....
+    implementation 'offlineaadhaar_url_pending'
+}
 ```
 ## Main Activity Code
 To initialise the view
