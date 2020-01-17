@@ -4,7 +4,7 @@ Enables your user to download compliant UIDAI Aadhaar XML inside your existing A
 [[Download SDK](www.invoid.co)](1.0.0)
 
 This SDK (Android) provides a set of screens and functionality to let your user download their Aadhaar XML inside your Android Application itself. This reduces customer drop off as they do not need to navigate to UIDAI Aadhaar Website to download the same.
-Aadhaar Offline is the only valid method to submit your Aadhaar identity to any RBI Regulated Entity in order to complete KYC. inVOID's SDK/API provides an easy to use Verification suite which will enable the most seamless customer onboarding.
+Aadhaar Offline is the only valid method to submit your Aadhaar identity to any RBI Regulated Entity in order to complete KYC. [inVOID](www.invoid.co) SDK/[API](api.invoid.co) provides an easy to use Verification suite which will enable the most seamless customer onboarding.
 
 ## Steps in the SDK
 1. User is guided to the UIDAI website to download the paperless e-KYC (Aadhaar .xml)
