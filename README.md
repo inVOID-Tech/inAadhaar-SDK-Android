@@ -1,8 +1,6 @@
 # Aadhaar-SDK-Android
 Enables your user to download compliant UIDAI Aadhaar XML inside your existing Android App
 
-[[Download SDK](https://www.invoid.co)](1.0.0)
-
 This SDK (Android) provides a set of screens and functionality to let your user download their Aadhaar XML inside your Android Application itself. This reduces customer drop off as they do not need to navigate to UIDAI Aadhaar Website to download the same.
 Aadhaar Offline is the only valid method to submit your Aadhaar identity to any RBI Regulated Entity in order to complete KYC. [inVOID](https://www.invoid.co) SDK/[API](https://api.invoid.co) provides an easy to use Verification suite which will enable the most seamless customer onboarding.
 
@@ -14,14 +12,29 @@ Aadhaar Offline is the only valid method to submit your Aadhaar identity to any 
     - [x] An OTP is received by the end user which is then auto read by the SDK. The inVOID SDK only reads the then received OTP message through the screen.
 4. Once the details entered are authenticated, the Aadhaar .xml is downloaded in a .zip which is password(share code) protected
 
+## Minimum Requirements
+- `minSdkVersion 21` 
+- `AndroidX`
+
 ## Getting Started
 
+Add following lines in your root ```build.gradle```
+```
+buildscript {
+
+    allprojects {
+        repositories {
+            ...
+            maven { url "https://jitpack.io" }
+            maven { url "https://dl.bintray.com/invoidandroid12/android/" }
+        }
+    }
+}
+```
+
+Add following lines in your module level ```build.gradle```
 ```
 android {
-    ...
-    defaultConfig {
-       minSdkVersion 21
-    }
     ...
     compileOptions {
        sourceCompatibility = 1.8
@@ -30,11 +43,18 @@ android {
 }
 dependencies {
     ....
-    implementation 'offlineaadhaar_url_pending'
+    implementation 'co.invoid.android:offlineaadhaar:1.0.0'
 }
 ```
-## Main Activity Code
-To initialise the view
+
+This library also uses some common android libraries. So if you are not already using them then make sure you add these libraries to your module level `build.gradle`
+- `androidx.appcompat:appcompat:1.1.0`
+- `androidx.constraintlayout:constraintlayout:1.1.3`
+- `com.google.android.material:material:1.0.0`
+
+
+## Initialize SDK
+
 ```
 yourinitbutton.setOnClickListener(new View.OnClickListener() {
             @Override
