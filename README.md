@@ -20,14 +20,11 @@ Aadhaar Offline is the only valid method to submit your Aadhaar identity to any 
 
 Add following lines in your root ```build.gradle```
 ```
-buildscript {
-
-    allprojects {
-        repositories {
-            ...
-            maven { url "https://jitpack.io" }
-            maven { url "https://dl.bintray.com/invoidandroid12/android/" }
-        }
+allprojects {
+    repositories {
+        ...
+        maven { url "https://jitpack.io" }
+        maven { url "https://dl.bintray.com/invoidandroid12/android/" }
     }
 }
 ```
@@ -43,7 +40,7 @@ android {
 }
 dependencies {
     ....
-    implementation 'co.invoid.android:offlineaadhaar:1.0.0'
+    implementation 'co.invoid.android:offlineaadhaar:1.0.1'
 }
 ```
 
@@ -59,7 +56,7 @@ This library also uses some common android libraries. So if you are not already 
 yourinitbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                OfflineAadhaarHelper.with(Activity.this, "Your Company Name to be displayed to the user while doing the process ", "Your Authkey").start();
+                OfflineAadhaarHelper.with(Activity.this, "Your Company Name to be displayed to the user while doing the process ", "Your Authkey", "cust ID", "user ID").start();
             }
         });
 ```
