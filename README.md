@@ -13,7 +13,7 @@ Aadhaar Offline is the only valid method to submit your Aadhaar identity to any 
 4. Once the details entered are authenticated, the Aadhaar .xml is downloaded in a .zip which is password(share code) protected
 
 ## Minimum Requirements
-- `minSdkVersion 21` 
+- `minSdkVersion 19` 
 - `AndroidX`
 
 ## Getting Started
@@ -40,7 +40,7 @@ android {
 }
 dependencies {
     ....
-    implementation 'co.invoid.android:offlineaadhaar:1.0.1'
+    implementation 'co.invoid.android:offlineaadhaar:1.0.2rc'
 }
 ```
 
