@@ -40,7 +40,7 @@ android {
 }
 dependencies {
     ....
-    implementation 'co.invoid.android:offlineaadhaar:1.0.2rc3'
+    implementation 'co.invoid.android:offlineaadhaar:1.0.2'
 }
 ```
 
@@ -102,28 +102,59 @@ To Obtain your organisation's authkey, contact us at hello@invoid.co
 @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         if(requestCode == OfflineAadhaarHelper.AADHAAR_DATA_REQ_CODE) {
-            if(resultCode == Activity.RESULT_OK) {
+        
+            if (resultCode == Activity.RESULT_OK) {
                 if (data != null) {
                     AadhaarData aadhaarData = data.getParcelableExtra(OfflineAadhaarHelper.AADHAAR_DATA);
-                    Log.d(TAG, "onActivityResult: json: "+aadhaarData.getJsonString());
-                    Log.d(TAG, "onActivityResult: shareCode: "+aadhaarData.getShareCode());
-                    Log.d(TAG, "onActivityResult: file uri: "+aadhaarData.getFileUri().toString());
+                    Log.d(TAG, "onActivityResult: json: " + aadhaarData.getJsonString());
+                    Log.d(TAG, "onActivityResult: shareCode: " + aadhaarData.getShareCode());
+                    Log.d(TAG, "onActivityResult: file uri: " + aadhaarData.getFileUri());
                 }
+
             } else if (resultCode == Activity.RESULT_CANCELED) {
                 Log.d(TAG, "onActivityResult: cancelled by user");
-                
+
             } else if(resultCode == OfflineAadhaarHelper.INTERNET_ERROR) {
                 Log.d(TAG, "onActivityResult: internet error");
-                
+                String errorMessage = data.getStringExtra(OfflineAadhaarHelper.ERROR_MESSAGE);
+
             } else if(resultCode == OfflineAadhaarHelper.INVOID_AUTH_ERROR) {
-                Log.d(TAG, "onActivityResult: not authorized to use this SDK");
-                
+                Log.d(TAG, "onActivityResult: invoid auth error");
+                String errorMessage = data.getStringExtra(OfflineAadhaarHelper.ERROR_MESSAGE);
+
             } else if(resultCode == OfflineAadhaarHelper.UIDAI_ERROR) {
                 Log.d(TAG, "onActivityResult: UIDAI Site error");
+
+            } else if(resultCode == OfflineAadhaarHelper.XML_DOWNLOAD_ERROR) {
+                Log.d(TAG, "onActivityResult: XML file download error");
+                String errorMessage = data.getStringExtra(OfflineAadhaarHelper.ERROR_MESSAGE);
             }
+
+            else if(resultCode == OfflineAadhaarHelper.XML_UPLOAD_ERROR) {
+                Log.d(TAG, "onActivityResult: XML file upload error");
+                String errorMessage = data.getStringExtra(OfflineAadhaarHelper.ERROR_MESSAGE);
+
+                AadhaarData aadhaarData = data.getParcelableExtra(OfflineAadhaarHelper.AADHAAR_DATA);
+                Log.d(TAG, "onActivityResult: json: " + aadhaarData.getJsonString());
+                Log.d(TAG, "onActivityResult: shareCode: " + aadhaarData.getShareCode());
+                Log.d(TAG, "onActivityResult: file uri: " + aadhaarData.getFileUri());
+            }
+        
         } else {
             super.onActivityResult(requestCode, resultCode, data);
         }
     }
 ```
+## Release Notes
 
+### `1.0.2`
+- UI changes and customizations
+- Add option to prefill sharecode
+- Add support for android api 19 and above
+- Better error handling
+
+### `1.0.1`
+- Add option to upload downloaded aadhaar file to dashboard.
+
+### `1.0.0`
+- Inital release
