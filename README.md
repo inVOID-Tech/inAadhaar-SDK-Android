@@ -40,15 +40,12 @@ android {
 }
 dependencies {
     ....
-    implementation 'co.invoid.android:offlineaadhaar:1.0.2rc3'
+    implementation 'co.invoid.android:offlineaadhaar:1.0.3rc'
 }
 ```
 
 This library also uses some common android libraries. So if you are not already using them then make sure you add these libraries to your module level `build.gradle`
 - `androidx.appcompat:appcompat:1.1.0`
-- `androidx.constraintlayout:constraintlayout:1.1.3`
-- `com.google.android.material:material:1.0.0`
-
 
 ## Initialize SDK
 
