@@ -40,7 +40,7 @@ android {
 }
 dependencies {
     ....
-    implementation 'co.invoid.android:offlineaadhaar:1.0.3rc'
+    implementation 'co.invoid.android:offlineaadhaar:1.0.3rc2'
 }
 ```
 
@@ -74,19 +74,30 @@ To Obtain your organisation's authkey, contact us at hello@invoid.co
         ...
     </style>
     
-    // To make text in ActionBar dark, use this. Dark text is default
+    <!--To make text in ActionBar dark, use this. Dark text is default-->
     <style name="InvoidAppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
     
-    // To make text in ActionBar white, use this. 
+    <!--To make text in ActionBar white, use this.-->
     <style name="InvoidAppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Light" />
     ```   
 - Following colors are customizable. Add them in your `colors.xml`  
     ```
-    //Customize color of action bar in Activity
+    <!--Customize color of action bar in Activity-->
     <color name="invoidActionBarColor">@color/yourColor</color> 
     
-    //Customize color of buttons in Activity
+    <!--Customize color of buttons in Activity-->
     <color name="invoidButtonColor">@color/yourColor</color> 
+    ```  
+- Error message show to the user can be customized by defining following strings in your `strings.xml` file
+    ```
+    <!--Error message shown in case of OfflineAadhaarHelper.UIDAI_ERROR-->
+    <string name="invoid_uidai_error">Server down, please try after some time</string>
+    
+    <!--Error message shown in case of OfflineAadhaarHelper.INVOID_AUTH_ERROR-->
+    <string name="invoid_auth_error">Not authorized</string>
+    
+    <!--Error message shown in case of OfflineAadhaarHelper.INTERNET_ERROR-->
+    <string name="invoid_check_internet_error">Please check your internet connection</string>
     ```
 
 ## Response returned from the SDK
