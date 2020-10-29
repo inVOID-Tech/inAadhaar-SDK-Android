@@ -40,7 +40,7 @@ android {
 }
 dependencies {
     ....
-    implementation 'co.invoid.android:offlineaadhaar:1.0.3rc3'
+    implementation 'co.invoid.android:offlineaadhaar:1.0.4'
 }
 ```
 
