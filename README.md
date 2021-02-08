@@ -24,7 +24,7 @@ allprojects {
     repositories {
         ...
         maven { url "https://jitpack.io" }
-        maven { url "https://gitlab.com/api/v4/projects/24189989/packages/maven" }
+        maven { url "https://gitlab.com/api/v4/projects/24251481/packages/maven" }
     }
 }
 ```
