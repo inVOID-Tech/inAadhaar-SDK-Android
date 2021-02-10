@@ -24,7 +24,7 @@ allprojects {
     repositories {
         ...
         maven { url "https://jitpack.io" }
-        maven { url "https://dl.bintray.com/invoidandroid12/android/" }
+        maven { url "https://gitlab.com/api/v4/projects/24251481/packages/maven" }
     }
 }
 ```
@@ -40,12 +40,12 @@ android {
 }
 dependencies {
     ....
-    implementation 'co.invoid.android:offlineaadhaar:1.0.3rc3'
+    implementation 'co.invoid.android:offlineaadhaar:1.0.5rc1'
 }
 ```
 
 This library also uses some common android libraries. So if you are not already using them then make sure you add these libraries to your module level `build.gradle`
-- `androidx.appcompat:appcompat:1.1.0`
+- `androidx.appcompat:appcompat:1.2.0`
 
 ## Initialize SDK
 
@@ -101,8 +101,7 @@ To Obtain your organisation's authkey, contact us at hello@invoid.co
     ```
 
 ## Response returned from the SDK
-- .zip file path
-- sharecode
+- xml file uri
 - processedJSON
 - Error result
 
@@ -114,8 +113,7 @@ To Obtain your organisation's authkey, contact us at hello@invoid.co
                 if (data != null) {
                     AadhaarData aadhaarData = data.getParcelableExtra(OfflineAadhaarHelper.AADHAAR_DATA);
                     Log.d(TAG, "onActivityResult: json: "+aadhaarData.getJsonString());
-                    Log.d(TAG, "onActivityResult: shareCode: "+aadhaarData.getShareCode());
-                    Log.d(TAG, "onActivityResult: file uri: "+aadhaarData.getFileUri().toString());
+                    Log.d(TAG, "onActivityResult: file uri: "+aadhaarData.getXmlFileUri().toString());
                 }
             } else if (resultCode == Activity.RESULT_CANCELED) {
                 Log.d(TAG, "onActivityResult: cancelled by user");
