@@ -40,7 +40,7 @@ android {
 }
 dependencies {
     ....
-    implementation 'co.invoid.android:offlineaadhaar:1.0.5rc1'
+    implementation 'co.invoid.android:offlineaadhaar:1.0.5rc2'
 }
 ```
 
@@ -114,6 +114,8 @@ To Obtain your organisation's authkey, contact us at hello@invoid.co
                     AadhaarData aadhaarData = data.getParcelableExtra(OfflineAadhaarHelper.AADHAAR_DATA);
                     Log.d(TAG, "onActivityResult: json: "+aadhaarData.getJsonString());
                     Log.d(TAG, "onActivityResult: file uri: "+aadhaarData.getXmlFileUri().toString());
+                    Log.d(TAG, "onActivityResult: zip file uri: "+aadhaarData.getZipFileUri().toString());
+                    Log.d(TAG, "onActivityResult: share code: "+aadhaarData.getShareCode.toString());
                 }
             } else if (resultCode == Activity.RESULT_CANCELED) {
                 Log.d(TAG, "onActivityResult: cancelled by user");
