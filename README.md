@@ -40,7 +40,7 @@ android {
 }
 dependencies {
     ....
-    implementation 'co.invoid.android:offlineaadhaar:1.0.5rc2'
+    implementation 'co.invoid.android:offlineaadhaar:1.0.5rc3'
 }
 ```
 
@@ -102,6 +102,8 @@ To Obtain your organisation's authkey, contact us at hello@invoid.co
 
 ## Response returned from the SDK
 - xml file uri
+- zip file uri
+- share code to open zip file
 - processedJSON
 - Error result
 
